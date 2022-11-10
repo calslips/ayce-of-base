@@ -1,9 +1,13 @@
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
+const locationRoute = require('./routes/locations');
 
 const app = express();
 const PORT = process.env.PORT || 8000;
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 (async () => {
   try {
@@ -13,5 +17,7 @@ const PORT = process.env.PORT || 8000;
     console.error(error);
   }
 })();
+
+app.use('/api/locations', locationRoute);
 
 app.listen(PORT, () => console.log(`Server up and running on port: ${PORT}`));
