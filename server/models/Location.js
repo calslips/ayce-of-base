@@ -34,10 +34,7 @@ const locationSchema = new mongoose.Schema({
     type: Number,
     require: true,
   },
-  {
-    timestamps: true,
-  },
-});
+}, { timestamps: true });
 
 const Location = mongoose.model('Location', locationSchema);
 
