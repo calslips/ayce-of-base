@@ -11,4 +11,13 @@ module.exports = {
       res.status(500).json(err);
     }
   },
+  getAllLocations: async (req, res) => {
+    try{
+      const allLocations = await Location.find({}).lean();
+      res.status(200).json(allLocations);
+    } catch (err) {
+      console.error(err);
+      res.status(500).json(err);
+    }
+  },
 }
