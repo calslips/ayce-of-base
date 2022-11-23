@@ -1,5 +1,14 @@
 {
   "expo": {
+    "plugins": [
+      [
+        "@rnmapbox/maps",
+        {
+          "RNMapboxMapsImpl": "mapbox",
+          "RNMapboxMapsDownloadToken": "replacewithtoken"
+        }
+      ]
+    ],
     "name": "ayce-of-base",
     "slug": "ayce-of-base",
     "version": "1.0.0",
